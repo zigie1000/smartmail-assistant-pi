@@ -32,4 +32,4 @@ Built on WordPress, leveraging WooCommerce for subscription management and integ
 SmartMail Assistant Pi combines advanced AI and Pi Network to deliver a powerful email management solution.
 
 ## Contact
-For more information, visit the [GitHub repository](https://github.com/zigie1000/smartmail-assistant-pi) or contact us at [your email].
+For more information, visit the [GitHub repository](https://github.com/zigie1000/smartmail-assistant-pi) or contact us at zigie1000@gmail.com .
