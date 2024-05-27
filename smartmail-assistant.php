@@ -3,7 +3,7 @@
 Plugin Name: SmartMail Assistant Pi
 Description: An AI-powered email assistant plugin for WordPress integrated with the Pi Network for subscription payments.
 Version: 1.0
-Author: Your Name
+Author: Marco Zagato
 */
 
 // Prevent direct access
