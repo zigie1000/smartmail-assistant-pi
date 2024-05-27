@@ -39,4 +39,11 @@ function sma_enqueue_scripts() {
     wp_enqueue_script('sma-scripts', plugin_dir_url(__FILE__) . 'assets/js/script.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'sma_enqueue_scripts');
-?>
+
+// Add update checker
+require 'path/to/plugin-update-checker/plugin-update-checker.php';
+$updateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://your-git-repo-url/',
+    __FILE__,
+    'smartmail-assistant-pi'
+);
