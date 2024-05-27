@@ -21,9 +21,9 @@ SmartMail Assistant Pi is an AI-powered email assistant plugin for WordPress int
 
 ## Usage
 - Use shortcodes in posts or pages to utilize features.
-- `[sma_email_categorization]`
-- `[sma_priority_inbox]`
-- `[sma_email_summarization]`
+  - `[sma_email_categorization]`
+  - `[sma_priority_inbox]`
+  - `[sma_email_summarization]`
 
 ## Pi Payment Integration
 1. Install WooCommerce and WooCommerce Subscriptions.
