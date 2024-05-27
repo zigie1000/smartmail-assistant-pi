@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Include necessary files
-require_once plugin_dir_path(__FILE__) . 'includes/class-wc-gateway-pi.php';
+
 require_once plugin_dir_path(__FILE__) . 'includes/class-wc-gateway-pi.php';
 require_once plugin_dir_path(__FILE__) . 'includes/admin-settings.php';
 require_once plugin_dir_path(__FILE__) . 'includes/shortcodes.php';
