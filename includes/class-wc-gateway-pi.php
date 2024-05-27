@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-require_once('path/to/pi-sdk/autoload.php'); // Ensure the correct path to the Pi SDK
+require_once(plugin_dir_path(__FILE__) . 'path/to/pi-sdk/autoload.php'); // Ensure the correct path to the Pi SDK
 
 class WC_Gateway_Pi extends WC_Payment_Gateway {
     public function __construct() {
