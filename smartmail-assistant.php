@@ -3,15 +3,15 @@
 Plugin Name: SmartMail Assistant
 Description: An AI-powered email assistant plugin for WordPress.
 Version: 1.0
-Author: Your Name
+Author: Marco Zagato
 */
 
 // Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
-
 // Include necessary files
+require_once plugin_dir_path(__FILE__) . 'includes/class-wc-gateway-pi.php';
 require_once plugin_dir_path(__FILE__) . 'includes/admin-settings.php';
 require_once plugin_dir_path(__FILE__) . 'includes/shortcodes.php';
 require_once plugin_dir_path(__FILE__) . 'includes/api-functions.php';
