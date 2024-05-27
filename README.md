@@ -1,6 +1,6 @@
 # SmartMail Assistant Pi
 
-SmartMail Assistant Pi is an AI-powered email assistant plugin for WordPress integrated with the Pi Network for subscription payments.
+SmartMail Assistant Pi is an AI-powered email assistant plugin for WordPress integrated with the Pi Network for subscription payments. Users can subscribe using both Pi cryptocurrency and regular currency.
 
 ## Features
 - Email Categorization
@@ -12,6 +12,7 @@ SmartMail Assistant Pi is an AI-powered email assistant plugin for WordPress int
 - Sentiment Analysis
 - Email Templates
 - Pi Network Payment Integration
+- Regular Currency Payment Integration
 
 ## Installation
 1. Download the Plugin ZIP file.
@@ -29,6 +30,14 @@ SmartMail Assistant Pi is an AI-powered email assistant plugin for WordPress int
 1. Install WooCommerce and WooCommerce Subscriptions.
 2. Use the custom Pi payment gateway for subscriptions.
 3. Test the payment workflow to verify integration.
+
+## Regular Currency Payment Integration
+1. Install WooCommerce and WooCommerce Subscriptions.
+2. Use standard payment gateways (e.g., Stripe, PayPal) for subscriptions.
+3. Test the payment workflow to verify integration.
+
+## Updates
+The plugin includes an update checker to ensure you receive the latest features and improvements. Updates are managed through the WordPress admin panel.
 
 ## Support
 For support, visit the [GitHub repository](https://github.com/zigie1000/smartmail-assistant-pi).
