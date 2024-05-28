@@ -1,3 +1,15 @@
+<?php
+/*
+Plugin Name: SmartMail Assistant Pi
+Description: Pi Network integration for SmartMail Assistant.
+Version: 1.0
+Author: Your Name
+*/
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 // Register custom page template
 function pi_sma_register_template($templates) {
     $templates['templates/pi-smartmail-page.php'] = 'Pi SmartMail Page';
