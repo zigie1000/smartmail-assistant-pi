@@ -3,7 +3,7 @@
 Plugin Name: SmartMail Assistant Pi
 Description: Pi Network integration for SmartMail Assistant.
 Version: 1.0
-Author: Your Name
+Author: Marco Zagato
 */
 
 if (!defined('ABSPATH')) {
