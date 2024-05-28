@@ -1,46 +1,23 @@
 # SmartMail Assistant Pi
 
-SmartMail Assistant Pi is an AI-powered email assistant plugin for WordPress integrated with the Pi Network for subscription payments. Users can subscribe using both Pi cryptocurrency and regular currency.
+SmartMail Assistant Pi is an extension of the SmartMail Assistant plugin with integration into the Pi Network for subscription payments.
 
 ## Features
-- Email Categorization
-- Priority Inbox
-- Automated Responses
-- Email Summarization
-- Meeting Scheduler
-- Follow-up Reminders
-- Sentiment Analysis
-- Email Templates
 - Pi Network Payment Integration
-- Regular Currency Payment Integration
+- Real-time Transaction Verification
 
-## Installation
-1. Download the Plugin ZIP file.
-2. Upload to WordPress: Plugins > Add New > Upload Plugin.
-3. Activate the Plugin.
-4. Configure Settings: Enter API key and Pi Network credentials.
-
-## Usage
-- Use shortcodes in posts or pages to utilize features.
-  - `[sma_email_categorization]`
-  - `[sma_priority_inbox]`
-  - `[sma_email_summarization]`
-
-## Pi Payment Integration
-1. Install WooCommerce and WooCommerce Subscriptions.
-2. Use the custom Pi payment gateway for subscriptions.
-3. Test the payment workflow to verify integration.
-
-## Regular Currency Payment Integration
-1. Install WooCommerce and WooCommerce Subscriptions.
-2. Use standard payment gateways (e.g., Stripe, PayPal) for subscriptions.
-3. Test the payment workflow to verify integration.
-
-## Updates
-The plugin includes an update checker to ensure you receive the latest features and improvements. Updates are managed through the WordPress admin panel.
-
-## Support
-For support, visit the [GitHub repository](https://github.com/zigie1000/smartmail-assistant-pi).
-
-## License
-MIT License
+## Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/smartmail-assistant-pi.git
+2. Navigate to the project directory:
+   cd smartmail-assistant-pi
+3.	Configure the Pi SDK in config/pi-sdk-config.php with your API key and secret.
+4.	Implement the Pi Network functions as needed.
+PIOS License
+7. Commit and Push to Github
+   git add .
+   Committ the changes:
+   git commit -m "Initial commit with Pi SDK integration and    configuration"
+   Push the changes to Github
+   git push origin main
