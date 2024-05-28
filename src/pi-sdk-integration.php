@@ -1,6 +1,6 @@
 <?php
 
-require_once('../path/to/pi-sdk/autoload.php'); // Ensure the correct path to the Pi SDK
+require_once('../path/to/pi-sdk/autoload.php');
 
 class PiSDKIntegration {
     private $pi_sdk;
