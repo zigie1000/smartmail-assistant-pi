@@ -1,23 +1,78 @@
-# SmartMail Assistant Pi
+README for SmartMail Assistant Pi
 
-SmartMail Assistant Pi is an extension of the SmartMail Assistant plugin with integration into the Pi Network for subscription payments.
+SmartMail Assistant Pi
 
-## Features
-- Pi Network Payment Integration
-- Real-time Transaction Verification
+Description:
+SmartMail Assistant Pi is an AI-powered email assistant integrated with the Pi Network for secure subscription management.
 
-## Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/smartmail-assistant-pi.git
-2. Navigate to the project directory:
-   cd smartmail-assistant-pi
-3.	Configure the Pi SDK in config/pi-sdk-config.php with your API key and secret.
-4.	Implement the Pi Network functions as needed.
-PIOS License
-7. Commit and Push to Github
-   git add .
-   Committ the changes:
-   git commit -m "Initial commit with Pi SDK integration and    configuration"
-   Push the changes to Github
-   git push origin main
+Features:
+
+	•	Email Categorization
+	•	Priority Inbox
+	•	Auto Responses
+	•	Email Summarization
+	•	Meeting Scheduler
+	•	Follow-Up Reminders
+	•	Sentiment Analysis
+	•	Email Templates
+
+Installation:
+
+	1.	Download the app.
+	2.	Configure Pi Network settings in the app settings.
+	3.	Register and authenticate with your Pi Network account.
+
+Usage:
+
+	•	Manage emails using AI-powered features.
+	•	Use the integrated calendar for scheduling.
+	•	Access sentiment analysis and categorization directly from the app.
+
+Integration with Pi Network:
+
+	•	Ensure you have a Pi Network account.
+	•	Configure Pi SDK settings in config/pi-sdk-config.php:
+
+module.exports = {
+    apiKey: 'your-pi-network-api-key',
+    apiSecret: 'your-pi-network-api-secret'
+};
+
+
+	•	Verify subscriptions through the centralized API on smartmail.store.
+
+External Integration Capabilities:
+SmartMail Assistant Pi offers a flexible API for developers, enabling integration with existing applications and extending functionalities to adapt to new requirements.
+
+Support:
+For support, visit SmartMail Support.
+
+License:
+This project is licensed under the PiOS License.
+
+Contact:
+For more information, visit SmartMail Store.
+
+Integration in the PiOS System
+
+Steps for Integration:
+
+	1.	Register on PiOS: Register the SmartMail Assistant Pi project on the PiOS platform.
+	2.	Configure Pi SDK: Ensure the Pi SDK is properly configured in config/pi-sdk-config.js:
+
+module.exports = {
+    apiKey: 'your-pi-network-api-key',
+    apiSecret: 'your-pi-network-api-secret'
+};
+
+
+	3.	Subscription Verification: Implement centralized subscription verification using the smartmail.store API:
+
+const checkSubscription = async (userId) => {
+    const response = await fetch(`https://smartmail.store/api/check-subscription?user_id=${userId}`);
+    const data = await response.json();
+    return data.active;
+};
+
+
+	4.	Compliance with PiOS License: Ensure the app complies with the PiOS license by including the appropriate license text in the LICENSE file.
