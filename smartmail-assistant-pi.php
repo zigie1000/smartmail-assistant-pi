@@ -39,3 +39,4 @@ add_action('wp_enqueue_scripts', 'sma_pi_enqueue_scripts');
 
 // Include Pi Network compatibility
 require_once plugin_dir_path(__FILE__) . 'config/pi-sdk-config.php';
+?>
