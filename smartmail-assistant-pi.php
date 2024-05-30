@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SmartMail Assistant Pi
-Description: Pi Network integration for SmartMail Assistant.
+Description: An AI-powered email assistant plugin for WordPress integrated with the Pi Network for subscription payments.
 Version: 1.0
 Author: Your Name
 */
@@ -10,32 +10,32 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// Register custom page template
-function pi_sma_register_template($templates) {
-    $templates['templates/pi-smartmail-page.php'] = 'Pi SmartMail Page';
-    return $templates;
-}
-add_filter('theme_page_templates', 'pi_sma_register_template');
+// Include necessary files
+require_once plugin_dir_path(__FILE__) . 'includes/api-functions.php';
+require_once plugin_dir_path(__FILE__) . 'includes/subscription-functions.php';
+require_once plugin_dir_path(__FILE__) . 'includes/shortcodes.php';
+require_once plugin_dir_path(__FILE__) . 'src/pi-network-functions.php';
 
-function pi_sma_load_template($template) {
-    if (get_page_template_slug() == 'templates/pi-smartmail-page.php') {
-        $template = plugin_dir_path(__FILE__) . 'templates/pi-smartmail-page.php';
-    }
-    return $template;
+// Register activation hook
+function sma_pi_activate() {
+    update_option('sma_free_features', array('email_categorization', 'priority_inbox'));
+    update_option('sma_pro_features', array('auto_responses', 'email_summarization', 'meeting_scheduler', 'follow_up_reminders', 'sentiment_analysis', 'email_templates'));
 }
-add_filter('template_include', 'pi_sma_load_template');
+register_activation_hook(__FILE__, 'sma_pi_activate');
 
-// Handle Pi Payment AJAX request
-function handle_pi_payment() {
-    $amount = $_POST['amount'];
-    $pi_functions = new PiSpecificFunctions();
-    $result = $pi_functions->processPayment('order_id_placeholder', $amount, 'USD', array());
-    if ($result) {
-        echo 'Payment successful. Transaction ID: ' . $result;
-    } else {
-        echo 'Payment failed. Please try again.';
-    }
-    wp_die();
+// Register deactivation hook
+function sma_pi_deactivate() {
+    delete_option('sma_free_features');
+    delete_option('sma_pro_features');
 }
-add_action('wp_ajax_pi_payment', 'handle_pi_payment');
-add_action('wp_ajax_nopriv_pi_payment', 'handle_pi_payment');
+register_deactivation_hook(__FILE__, 'sma_pi_deactivate');
+
+// Enqueue scripts and styles
+function sma_pi_enqueue_scripts() {
+    wp_enqueue_style('sma-styles', plugin_dir_url(__FILE__) . 'assets/css/style.css');
+    wp_enqueue_script('sma-scripts', plugin_dir_url(__FILE__) . 'assets/js/script.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'sma_pi_enqueue_scripts');
+
+// Include Pi Network compatibility
+require_once plugin_dir_path(__FILE__) . 'config/pi-sdk-config.php';
