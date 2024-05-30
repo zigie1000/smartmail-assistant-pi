@@ -13,3 +13,4 @@ function sma_check_subscription() {
 
     return isset($data['active']) && $data['active'] === true;
 }
+?>
