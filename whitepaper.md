@@ -1,4 +1,4 @@
-Updated White Paper for SmartMail Assistant Pi
+White Paper for SmartMail Assistant Pi
 
 Title: SmartMail Assistant Pi: Revolutionizing Email Management with AI and Pi Network Integration
 
