@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SmartMail Assistant Pi
  * Plugin URI: https://example.com/
- * Description: Pi Network version of SmartMail Assistant for managing subscriptions and API integrations.
+ * Description: PI version of SmartMail Assistant for managing PI integrations.
  * Version: 1.0.0
  * Author: Marco Zagato
  */
