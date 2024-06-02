@@ -1,15 +1,14 @@
 <?php
-/**
- * Plugin Name: SmartMail Assistant Pi
- * Plugin URI: https://example.com/
- * Description: PI version of SmartMail Assistant for managing PI integrations.
- * Version: 1.0.0
- * Author: Marco Zagato
- */
+/*
+Plugin Name: SmartMail Assistant Pi
+Description: Pi plugin for SmartMail Assistant
+Version: 1.0
+Author: Marco Zagato
+Author URI: https://smartmail.store
+*/
 
-// Prevent direct access
 if (!defined('ABSPATH')) {
-    exit;
+    exit; // Exit if accessed directly
 }
 
 // Define plugin constants
@@ -46,11 +45,10 @@ function smartmail_pi_admin_menu() {
 }
 add_action('admin_menu', 'smartmail_pi_admin_menu');
 
-// Admin page content
 function smartmail_pi_admin_page() {
     ?>
     <div class="wrap">
-        <h1>SmartMail Assistant Pi</h1>
+        <h1>SmartMail Assistant Pi Settings</h1>
         <form method="post" action="options.php">
             <?php
             settings_fields('smartmail_pi_settings');
