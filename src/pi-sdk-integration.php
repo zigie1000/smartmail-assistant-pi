@@ -7,4 +7,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function pi_sdk_integration() {
     // Pi SDK integration code here
+    echo "Pi SDK integration function executed.";
 }
+?>
