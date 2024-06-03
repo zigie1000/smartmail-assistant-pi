@@ -1,14 +1,16 @@
 <?php
-/*
-Plugin Name: SmartMail Assistant Pi
-Description: Pi plugin for SmartMail Assistant
-Version: 1.0
-Author: Marco Zagato
-Author URI: https://smartmail.store
-*/
+/**
+ * Plugin Name: SmartMail Assistant Pi
+ * Description: A WordPress plugin for SmartMail Assistant Pi functionality.
+ * Version: 1.0.0
+ * Author: Your Name
+ * Author URI: https://example.com
+ * Plugin URI: https://example.com
+ */
 
+// Prevent direct access to the file
 if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly
+    exit;
 }
 
 // Define plugin constants
@@ -32,7 +34,6 @@ function smartmail_pi_deactivate() {
 register_deactivation_hook(__FILE__, 'smartmail_pi_deactivate');
 
 // Admin menu
-add_action('admin_menu', 'smartmail_pi_admin_menu');
 function smartmail_pi_admin_menu() {
     add_menu_page(
         'SmartMail Assistant Pi',
@@ -40,36 +41,39 @@ function smartmail_pi_admin_menu() {
         'manage_options',
         'smartmail-pi',
         'smartmail_pi_admin_page',
-        'dashicons-admin-generic',
+        'dashicons-email-alt',
         6
     );
 }
+add_action('admin_menu', 'smartmail_pi_admin_menu');
 
+// Admin page callback
 function smartmail_pi_admin_page() {
-    ?>
-    <div class="wrap">
-        <h1>SmartMail Assistant Pi Settings</h1>
-        <form method="post" action="options.php">
-            <?php
-            settings_fields('smartmail_pi_settings');
-            do_settings_sections('smartmail-pi');
-            submit_button();
-            ?>
-        </form>
-    </div>
-    <?php
+    echo '<div class="wrap">';
+    echo '<h1>SmartMail Assistant Pi</h1>';
+    echo '<form method="post" action="options.php">';
+    settings_fields('smartmail_pi_options_group');
+    do_settings_sections('smartmail-pi');
+    submit_button();
+    echo '</form>';
+    echo '</div>';
 }
 
 // Register settings
-add_action('admin_init', 'smartmail_pi_register_settings');
 function smartmail_pi_register_settings() {
-    register_setting('smartmail_pi_settings', 'smartmail_pi_api_key');
-    add_settings_section('smartmail_pi_section', 'API Settings', null, 'smartmail-pi');
-    add_settings_field('smartmail_pi_api_key', 'API Key', 'smartmail_pi_api_key_callback', 'smartmail-pi', 'smartmail_pi_section');
+    register_setting('smartmail_pi_options_group', 'smartmail_pi_options');
+    add_settings_section('smartmail_pi_main_section', 'Main Settings', 'smartmail_pi_section_callback', 'smartmail-pi');
+    add_settings_field('smartmail_pi_field', 'API Key', 'smartmail_pi_field_callback', 'smartmail-pi', 'smartmail_pi_main_section');
+}
+add_action('admin_init', 'smartmail_pi_register_settings');
+
+// Section callback
+function smartmail_pi_section_callback() {
+    echo 'Enter your settings below:';
 }
 
-function smartmail_pi_api_key_callback() {
-    $api_key = get_option('smartmail_pi_api_key');
-    echo '<input type="text" name="smartmail_pi_api_key" value="' . esc_attr($api_key) . '" class="regular-text">';
+// Field callback
+function smartmail_pi_field_callback() {
+    $options = get_option('smartmail_pi_options');
+    echo '<input type="text" name="smartmail_pi_options[api_key]" value="' . esc_attr($options['api_key']) . '">';
 }
-?>
