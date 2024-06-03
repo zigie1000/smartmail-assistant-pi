@@ -1,4 +1,9 @@
 <?php
+// Subscription functions file for SmartMail Assistant
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
 
 function sma_check_subscription() {
     $user_id = get_current_user_id();
@@ -12,5 +17,18 @@ function sma_check_subscription() {
     $data = json_decode($body, true);
 
     return isset($data['active']) && $data['active'] === true;
+}
+
+function smartmail_subscribe_user($email) {
+    // Subscription code here
+    $response = wp_remote_post('https://smartmail.store/api/subscribe', array(
+        'body' => array('email' => $email),
+    ));
+
+    if (is_wp_error($response)) {
+        return false;
+    }
+
+    return true;
 }
 ?>
