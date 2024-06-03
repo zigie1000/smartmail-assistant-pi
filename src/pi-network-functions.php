@@ -6,7 +6,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function pi_network_function() {
-    // Pi network specific function code here
-    echo "Pi Network function executed.";
+    // Example of Pi network specific function code
+    $response = wp_remote_get('https://api.minepi.com/v1/network/status');
+    if (is_wp_error($response)) {
+        return 'Error connecting to Pi Network API';
+    }
+    $body = wp_remote_retrieve_body($response);
+    $data = json_decode($body, true);
+    return $data;
 }
 ?>
