@@ -80,3 +80,4 @@ function smartmail_pi_option_name_cb() {
     $setting = get_option('smartmail_pi_option_name');
     echo "<input type='text' name='smartmail_pi_option_name' value='" . esc_attr($setting) . "'>";
 }
+?>
