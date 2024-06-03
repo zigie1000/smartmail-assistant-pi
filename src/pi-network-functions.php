@@ -7,4 +7,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function pi_network_function() {
     // Pi network specific function code here
+    echo "Pi Network function executed.";
 }
+?>
